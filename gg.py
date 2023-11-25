@@ -38,7 +38,7 @@ class PasswordEnter(QMainWindow):  # Ввод пароля
         cur = con.cursor()
 
         # Проверка на первый заход в программу
-        res = cur.execute("""SELECT password FROM users""").fetchall()
+        res = cur.execute("""SELECT password FROM users WHERE id = 1""").fetchall()
         if not res[0][0]:
             self.first_enter()
         else:
