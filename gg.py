@@ -473,7 +473,7 @@ class SettingsWidget(QMainWindow):  # Настройки
         cur = con.cursor()
 
         res = cur.execute("""UPDATE users SET password = ? WHERE id = 1""", (
-            md5(new_password.encode()).hexdigest()),)
+            md5(new_password.encode()).hexdigest(),))
         con.commit()
 
         self.password_status.setText('Пароль успешно сохранён')
